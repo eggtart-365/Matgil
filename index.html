@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>맛길 - 우리 동네 맛집 지도</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <!-- JSDelivr 를 통해 Pretendard 폰트 추가 (JSDelivr는 오픈소스를 위해 운영되는 CDN(Content Delivery Network) 서비스) -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-left">
+        <a href="index.html" class="logo">맛길</a>
+        <!-- 로고: 클릭 시 메인 페이지로 이동 -->
+          <nav class="nav">
+            <a href="index.html">홈</a>
+            <a href="#">이벤트</a>
+            <a href="about.html">소개</a>
+          </nav>
+        </div>
+
+        <div class="header-right">
+          <div class="search-bar">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="검색어를 입력해주세요"
+            />
+            <button class="search-button" type="button">
+              <!-- 돋보기 아이콘 (SVG 직접 작성) -->
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+          <a href="login.html" class="btn-login">로그인</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- 광고형 캐러슬 배너 -->
+      <section class="carousel-section">
+        <div class="carousel-wrap">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- 슬라이드 1 -->
+            <div class="carousel-slide slide-1">
+              <div class="slide-inner">
+                <div class="slide-text">
+                  <span class="slide-tag">🔥 이번 주 인기</span>
+                  <h2 class="slide-title">지금 뜨는<br/>우리 동네 맛집</h2>
+                  <p class="slide-desc">실시간 리뷰로 검증된 맛집을<br/>맛길에서 먼저 만나보세요.</p>
+                  <a href="#" class="slide-btn">바로 탐색하기</a>
+                </div>
+                <div class="slide-visual slide-visual-1">
+                  <div class="food-badge badge-a">🍜 평점 4.9</div>
+                  <div class="food-badge badge-b">🍣 리뷰 328개</div>
+                  <div class="food-badge badge-c">📍 도보 3분</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 2 -->
+            <div class="carousel-slide slide-2">
+              <div class="slide-inner">
+                <div class="slide-text">
+                  <span class="slide-tag">🎉 이벤트</span>
+                  <h2 class="slide-title">첫 리뷰 작성하고<br/>포인트 받아가세요</h2>
+                  <p class="slide-desc">방문한 맛집 리뷰를 남기면<br/>최대 5,000포인트 적립!</p>
+                  <a href="#" class="slide-btn slide-btn-dark">이벤트 참여하기</a>
+                </div>
+                <div class="slide-visual slide-visual-2">
+                  <div class="point-card">
+                    <span class="point-label">적립 포인트</span>
+                    <span class="point-value">+5,000P</span>
+                    <span class="point-sub">리뷰 1건당 최대</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 3 -->
+            <div class="carousel-slide slide-3">
+              <div class="slide-inner">
+                <div class="slide-text">
+                  <span class="slide-tag">🗺️ 신규 기능</span>
+                  <h2 class="slide-title">맛집 지도로<br/>한눈에 둘러보세요</h2>
+                  <p class="slide-desc">내 위치 기준 500m 이내<br/>숨은 맛집을 지도로 탐색.</p>
+                  <a href="#" class="slide-btn">지도 보기</a>
+                </div>
+                <div class="slide-visual slide-visual-3">
+                  <div class="map-preview">
+                    <div class="mp-pin mp-pin-1"><span></span></div>
+                    <div class="mp-pin mp-pin-2"><span></span></div>
+                    <div class="mp-pin mp-pin-3"><span></span></div>
+                    <div class="mp-radius"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 이전/다음 버튼 -->
+          <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="이전 슬라이드">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" id="carouselNext" aria-label="다음 슬라이드">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+
+          <!-- 인디케이터 닷 -->
+          <div class="carousel-dots" id="carouselDots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+          </div>
+
+          <!-- 슬라이드 카운터 -->
+          <div class="carousel-counter">
+            <span id="carouselCurrent">1</span> / <span>3</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 최근 뜨는 맛집 -->
+      <section class="trending-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-header-text">
+              <p class="section-eyebrow">이번 주 급상승</p>
+              <h2 class="section-title">최근 뜨는 맛집</h2>
+            </div>
+            <a href="#" class="section-more">전체보기 →</a>
+          </div>
+          <div class="trending-cards">
+
+            <div class="restaurant-card">
+              <div class="card-thumb thumb-1">
+                <span class="card-rank">1</span>
+                <span class="card-category-tag">한식</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">진진 갈비</h3>
+                <div class="card-meta">
+                  <span class="card-rating">⭐ 4.9</span>
+                  <span class="card-dot">·</span>
+                  <span class="card-reviews">리뷰 412개</span>
+                </div>
+                <div class="card-info">
+                  <span class="card-distance">📍 도보 5분</span>
+                  <span class="card-price">1인 ₩18,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="restaurant-card">
+              <div class="card-thumb thumb-2">
+                <span class="card-rank">2</span>
+                <span class="card-category-tag">일식</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">스시 하나</h3>
+                <div class="card-meta">
+                  <span class="card-rating">⭐ 4.8</span>
+                  <span class="card-dot">·</span>
+                  <span class="card-reviews">리뷰 287개</span>
+                </div>
+                <div class="card-info">
+                  <span class="card-distance">📍 도보 8분</span>
+                  <span class="card-price">1인 ₩32,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="restaurant-card">
+              <div class="card-thumb thumb-3">
+                <span class="card-rank">3</span>
+                <span class="card-category-tag">양식</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">브레드 & 버터</h3>
+                <div class="card-meta">
+                  <span class="card-rating">⭐ 4.7</span>
+                  <span class="card-dot">·</span>
+                  <span class="card-reviews">리뷰 193개</span>
+                </div>
+                <div class="card-info">
+                  <span class="card-distance">📍 도보 3분</span>
+                  <span class="card-price">1인 ₩22,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="restaurant-card">
+              <div class="card-thumb thumb-4">
+                <span class="card-rank">4</span>
+                <span class="card-category-tag">카페</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">온더로드 커피</h3>
+                <div class="card-meta">
+                  <span class="card-rating">⭐ 4.7</span>
+                  <span class="card-dot">·</span>
+                  <span class="card-reviews">리뷰 156개</span>
+                </div>
+                <div class="card-info">
+                  <span class="card-distance">📍 도보 2분</span>
+                  <span class="card-price">1인 ₩7,000~</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 카테고리별 맛집 -->
+      <section class="category-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-header-text">
+              <p class="section-eyebrow">종류별로 골라보기</p>
+              <h2 class="section-title">음식 카테고리</h2>
+            </div>
+          </div>
+
+          <!-- 필터 탭 (data-filter 값으로 JS에서 카테고리 필터링) -->
+          <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-filter="all">전체</button>
+            <button class="filter-tab" data-filter="korean">한식</button>
+            <button class="filter-tab" data-filter="japanese">일식</button>
+            <button class="filter-tab" data-filter="chinese">중식</button>
+            <button class="filter-tab" data-filter="western">양식</button>
+            <button class="filter-tab" data-filter="cafe">카페·디저트</button>
+          </div>
+
+          <!-- 필터링 맛집 그리드 (data-category 값으로 JS 필터링 대상 지정) -->
+          <div class="filter-grid" id="filterGrid">
+
+            <div class="filter-card" data-category="korean">
+              <div class="fcard-thumb fthumb-k1">
+                <span class="fcard-category">한식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">할머니 순대국</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.6</span><span class="card-dot">·</span><span>리뷰 88개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 6분</span>
+                  <span class="fcard-price">₩9,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="japanese">
+              <div class="fcard-thumb fthumb-j1">
+                <span class="fcard-category">일식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">라멘 히나타</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.8</span><span class="card-dot">·</span><span>리뷰 204개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 10분</span>
+                  <span class="fcard-price">₩13,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="chinese">
+              <div class="fcard-thumb fthumb-c1">
+                <span class="fcard-category">중식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">홍콩 딤섬하우스</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.5</span><span class="card-dot">·</span><span>리뷰 142개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 7분</span>
+                  <span class="fcard-price">₩15,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="western">
+              <div class="fcard-thumb fthumb-w1">
+                <span class="fcard-category">양식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">파스타 오스테리아</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.7</span><span class="card-dot">·</span><span>리뷰 117개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 4분</span>
+                  <span class="fcard-price">₩19,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="cafe">
+              <div class="fcard-thumb fthumb-ca1">
+                <span class="fcard-category">카페</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">루프탑 블렌드</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.9</span><span class="card-dot">·</span><span>리뷰 321개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 5분</span>
+                  <span class="fcard-price">₩6,500~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="korean">
+              <div class="fcard-thumb fthumb-k2">
+                <span class="fcard-category">한식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">제주 흑돼지 구이</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.8</span><span class="card-dot">·</span><span>리뷰 259개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 9분</span>
+                  <span class="fcard-price">₩16,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="japanese">
+              <div class="fcard-thumb fthumb-j2">
+                <span class="fcard-category">일식</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">카츠 사쿠라</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.6</span><span class="card-dot">·</span><span>리뷰 98개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 12분</span>
+                  <span class="fcard-price">₩14,000~</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-card" data-category="cafe">
+              <div class="fcard-thumb fthumb-ca2">
+                <span class="fcard-category">디저트</span>
+              </div>
+              <div class="fcard-body">
+                <h3 class="fcard-name">마들렌 베이커리</h3>
+                <div class="fcard-meta">
+                  <span>⭐ 4.7</span><span class="card-dot">·</span><span>리뷰 176개</span>
+                </div>
+                <div class="fcard-bottom">
+                  <span>📍 도보 3분</span>
+                  <span class="fcard-price">₩5,000~</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 바로가기 -->
+      <section class="shortcut-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-header-text">
+              <p class="section-eyebrow">QUICK ACCESS</p>
+              <h2 class="section-title">바로가기</h2>
+            </div>
+          </div>
+          <!-- 바로가기 아이템 목록 (a 태그로 클릭 가능한 링크로 구성) -->
+          <div class="shortcut-grid">
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">🗺️</div>
+              <span class="shortcut-label">맛집 지도</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">⭐</div>
+              <span class="shortcut-label">즐겨찾기</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">💬</div>
+              <span class="shortcut-label">리뷰 관리</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">🎁</div>
+              <span class="shortcut-label">포인트</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">🔥</div>
+              <span class="shortcut-label">인기 급상승</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">🎉</div>
+              <span class="shortcut-label">이벤트</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">📋</div>
+              <span class="shortcut-label">내 방문 기록</span>
+            </a>
+            <a href="#" class="shortcut-item">
+              <div class="shortcut-box">⚙️</div>
+              <span class="shortcut-label">설정</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 우측 고정 광고 패널 (콘텐츠 영역 외부 여백에 표시) -->
+      <aside class="side-ad-panel">
+        <div class="ad-box">광고 영역</div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <a href="index.html" class="footer-logo">맛길</a>
+          <!-- 푸터 로고: 메인 페이지 링크 -->
+          <nav class="footer-nav">
+            <a href="about.html" class="footer-nav-link">소개</a>
+            <!-- target="_blank": 새 탭에서 열기 -->
+            <a
+              href="https://github.com/eggtart-365"
+              class="footer-nav-link"
+              target="_blank"
+              >GitHub</a
+            >
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-desc"
+            >컴퓨터소프트웨어공학과 26학번 김태현 웹프로그래밍 과제</span
+          >
+          <span class="footer-copy"
+            >&copy; 2026 맛길. All rights reserved.</span
+          >
+        </div>
+      </div>
+    </footer>
+  <script src="js/index.js"></script>
+  </body>
+</html>

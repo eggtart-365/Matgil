@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소개 - 맛길</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <!-- JSDelivr 를 통해 Pretendard 폰트 추가 (JSDelivr는 오픈소스를 위해 운영되는 CDN(Content Delivery Network) 서비스) -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="index.html" class="logo">맛길</a>
+          <!-- 로고: 클릭 시 메인 페이지로 이동 -->
+          <nav class="nav">
+            <a href="index.html">홈</a>
+            <a href="#">이벤트</a>
+            <a href="about.html">소개</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-bar">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="검색어를 입력해주세요"
+            />
+            <button class="search-button" type="button">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+          <a href="login.html" class="btn-login">로그인</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- 히어로 배너 -->
+      <section class="hero-banner">
+        <!-- 배경 장식용 원형 도형 (포인터 이벤트 차단, 클릭 불가) -->
+        <div class="hero-bg-shapes">
+          <div class="hero-shape shape-1"></div>
+          <div class="hero-shape shape-2"></div>
+          <div class="hero-shape shape-3"></div>
+        </div>
+        <div class="hero-inner">
+          <div class="hero-text">
+            <p class="hero-eyebrow">우리 동네 맛집 탐색기</p>
+            <h1 class="hero-title">맛있는 길을<br/>함께 걸어요</h1>
+            <p class="hero-desc">내 주변 숨은 맛집을 지도 위에서 바로 찾고,<br/>실제 방문자의 솔직한 후기까지 한 번에.</p>
+            <div class="hero-actions">
+              <a href="#" class="hero-btn-primary">맛집 탐색하기</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-map"> <!-- 격자 배경 지도 미리보기 -->
+                <!-- 맛집 위치를 나타내는 핀 (호버 시 툴팁 표시) -->
+                <div class="map-pin pin-1">
+                  <span class="pin-dot"></span>
+                  <div class="pin-tooltip">김밥천국 ⭐ 4.8</div>
+                </div>
+                <div class="map-pin pin-2">
+                  <span class="pin-dot"></span>
+                  <div class="pin-tooltip">홍콩반점 ⭐ 4.5</div>
+                </div>
+                <div class="map-pin pin-3">
+                  <span class="pin-dot"></span>
+                  <div class="pin-tooltip">이태원갈비 ⭐ 4.9</div>
+                </div>
+                <div class="map-grid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 수치 통계 섹션 -->
+      <section class="about-stats">
+        <div class="about-stats-inner">
+          <div class="stat-item">
+            <span class="stat-number">2,400<span class="stat-unit">+</span></span>
+            <span class="stat-label">등록된 맛집</span>
+          </div>
+          <div class="stat-divider"></div> <!-- 수치 항목 사이 세로 구분선 -->
+          <div class="stat-item">
+            <span class="stat-number">18,000<span class="stat-unit">+</span></span>
+            <span class="stat-label">누적 리뷰</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">4.8<span class="stat-unit">★</span></span>
+            <span class="stat-label">평균 평점</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 서비스 특징 카드 섹션 -->
+      <section class="about-features">
+        <div class="about-features-inner">
+          <div class="features-header">
+            <p class="features-eyebrow">WHY MATGIL</p>
+            <h2 class="features-title">맛길만의 특징</h2>
+          </div>
+          <!-- 특징 카드 3개 (아이콘 + 제목 + 설명 구조) -->
+          <div class="features-cards">
+            <div class="feature-card">
+              <div class="feature-icon">📍</div>
+              <h3 class="feature-title">내 주변 맛집 탐색</h3>
+              <p class="feature-desc">현재 위치를 기반으로 걸어서 갈 수 있는 맛집을 지도 위에서 바로 확인하세요.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3 class="feature-title">솔직한 실사용자 리뷰</h3>
+              <p class="feature-desc">광고 없이 실제 방문자가 남긴 리뷰만 모았습니다. 진짜 맛집을 찾는 가장 빠른 방법.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🗂️</div>
+              <h3 class="feature-title">카테고리 & 필터</h3>
+              <p class="feature-desc">한식, 양식, 카페 등 원하는 카테고리와 평점·거리 필터로 딱 맞는 곳만 골라보세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <a href="index.html" class="footer-logo">맛길</a>
+          <!-- 푸터 로고: 메인 페이지 링크 -->
+          <nav class="footer-nav">
+            <a href="about.html" class="footer-nav-link">소개</a>
+            <!-- target="_blank": 새 탭에서 열기 -->
+            <a href="https://github.com/eggtart-365" class="footer-nav-link" target="_blank">GitHub</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-desc">컴퓨터소프트웨어공학과 26학번 김태현 웹프로그래밍 과제</span>
+          <span class="footer-copy">&copy; 2026 맛길. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

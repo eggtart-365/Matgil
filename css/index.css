@@ -1,0 +1,680 @@
+﻿/* 캐러슬 배너 */
+.carousel-section {
+  padding: 40px 24px;
+  background-color: #f7f7f7;
+}
+
+.carousel-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  /* cubic-bezier: 슬라이드 이동 시 자연스러운 가속/감속 곡선 */
+}
+
+.carousel-slide {
+  min-width: 100%; /* 슬라이드 한 장이 트랙 너비 100% 차지 */
+  height: 340px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 56px;
+  box-sizing: border-box;
+}
+
+.slide-1 {
+  background: linear-gradient(120deg, #fff5f3 0%, #ffe8e4 100%);
+}
+.slide-2 {
+  background: linear-gradient(120deg, #f3f7ff 0%, #e4edff 100%);
+}
+.slide-3 {
+  background: linear-gradient(120deg, #f3fff6 0%, #e4f7ea 100%);
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slide-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e85d4a;
+  background-color: rgba(232, 93, 74, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.slide-2 .slide-tag {
+  color: #4a7ae8;
+  background-color: rgba(74, 122, 232, 0.1);
+}
+.slide-3 .slide-tag {
+  color: #3aaa5e;
+  background-color: rgba(58, 170, 94, 0.1);
+}
+
+.slide-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.slide-desc {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.slide-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 10px 22px;
+  background-color: #e85d4a;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  width: fit-content;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+}
+
+.slide-btn:hover {
+  background-color: #c94a38;
+  transform: translateY(-1px);
+}
+
+.slide-btn-dark {
+  background-color: #4a7ae8;
+}
+
+.slide-btn-dark:hover {
+  background-color: #3563c9;
+}
+
+.slide-visual {
+  flex-shrink: 0;
+  position: relative;
+  width: 260px;
+  height: 220px;
+}
+
+.food-badge {
+  position: absolute;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.badge-a {
+  top: 20px;
+  left: 0;
+}
+.badge-b {
+  top: 90px;
+  left: 40px;
+}
+.badge-c {
+  top: 160px;
+  left: 10px;
+}
+
+.point-card {
+  position: absolute;
+  inset: 20px 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(74, 122, 232, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.point-label {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.point-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4a7ae8;
+  letter-spacing: -1px;
+}
+
+.point-sub {
+  font-size: 0.75rem;
+  color: #bbb;
+}
+
+.map-preview {
+  position: absolute;
+  inset: 20px 0;
+  background: #e8f5ec;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(58, 170, 94, 0.15);
+  background-image:
+    linear-gradient(rgba(58, 170, 94, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 170, 94, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  overflow: hidden;
+}
+
+.mp-radius {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(58, 170, 94, 0.12);
+  border: 1.5px dashed rgba(58, 170, 94, 0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mp-pin {
+  position: absolute;
+}
+
+.mp-pin span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #3aaa5e;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(58, 170, 94, 0.4);
+}
+
+.mp-pin-1 {
+  top: 38%;
+  left: 44%;
+}
+.mp-pin-2 {
+  top: 25%;
+  left: 62%;
+}
+.mp-pin-3 {
+  top: 58%;
+  left: 28%;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.carousel-prev {
+  left: 16px;
+}
+.carousel-next {
+  right: 16px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 0.2s,
+    width 0.2s;
+}
+
+.dot.active {
+  background: #e85d4a;
+  width: 22px; /* 활성 닷은 너비 확장으로 pill 형태 표현 */
+  border-radius: 4px;
+}
+
+.carousel-counter {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* 공통 섹션 레이아웃 */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 우측 고정 광고 패널: 1200px 콘텐츠 영역 바깥 오른쪽 여백에 배치 */
+.side-ad-panel {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(50% + 616px); /* 콘텐츠 절반(600px) + 여백(16px) */
+  width: 160px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.side-ad-panel.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 뷰포트가 좁아서 콘텐츠 영역을 침범할 경우 숨김 */
+@media (max-width: 1420px) {
+  .side-ad-panel {
+    display: none;
+  }
+}
+
+.ad-box {
+  background: #cccccc;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e85d4a;
+  letter-spacing: 0.06em;
+  margin: 0 0 6px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.section-more {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.section-more:hover {
+  color: #e85d4a;
+}
+
+/* 최근 뜨는 맛집 섹션 */
+.trending-section {
+  padding: 64px 0;
+  background: #fff;
+}
+
+.trending-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4열 균등 그리드 */
+  gap: 20px;
+}
+
+.restaurant-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.card-thumb {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.thumb-1 {
+  background: linear-gradient(160deg, #ffcfc8, #e85d4a);
+}
+.thumb-2 {
+  background: linear-gradient(160deg, #c8e0ff, #4a7ae8);
+}
+.thumb-3 {
+  background: linear-gradient(160deg, #ffefc8, #e8a84a);
+}
+.thumb-4 {
+  background: linear-gradient(160deg, #c8f0d8, #3aaa5e);
+}
+
+.card-rank {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+
+.card-category-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.card-dot {
+  color: #ccc;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.card-price {
+  font-weight: 600;
+  color: #666;
+}
+
+/* 카테고리별 맛집 섹션 */
+.category-section {
+  padding: 64px 0 80px;
+  background: #f7f7f7;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1.5px solid #e0e0e0;
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.filter-tab:hover {
+  border-color: #e85d4a;
+  color: #e85d4a;
+}
+
+.filter-tab.active {
+  background: #e85d4a;
+  border-color: #e85d4a;
+  color: #fff;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.filter-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  cursor: pointer;
+}
+
+.filter-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+.filter-card.hidden {
+  display: none; /* JS에서 카테고리 불일치 시 hidden 클래스 추가하여 숨김 처리 */
+}
+
+.fcard-thumb {
+  position: relative;
+  height: 130px;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.fthumb-k1 {
+  background: linear-gradient(140deg, #ffe0b2, #ff8a50);
+}
+.fthumb-k2 {
+  background: linear-gradient(140deg, #ffccbc, #e64a19);
+}
+.fthumb-j1 {
+  background: linear-gradient(140deg, #e1f5fe, #039be5);
+}
+.fthumb-j2 {
+  background: linear-gradient(140deg, #b3e5fc, #0288d1);
+}
+.fthumb-c1 {
+  background: linear-gradient(140deg, #fce4ec, #e91e63);
+}
+.fthumb-w1 {
+  background: linear-gradient(140deg, #f3e5f5, #9c27b0);
+}
+.fthumb-ca1 {
+  background: linear-gradient(140deg, #e8f5e9, #43a047);
+}
+.fthumb-ca2 {
+  background: linear-gradient(140deg, #fff8e1, #ffb300);
+}
+
+.fcard-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.fcard-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fcard-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.fcard-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.fcard-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.fcard-price {
+  font-weight: 700;
+  color: #555;
+}
+
+/* 바로가기 섹션 */
+.shortcut-section {
+  padding: 64px 0 80px;
+  background: #fff;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8개 아이콘 1행 균등 배치 */
+  gap: 16px;
+}
+
+.shortcut-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.shortcut-box {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 너비와 높이를 1:1 비율로 고정 */
+  background: #f7f7f7;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  transition:
+    background-color 0.18s,
+    transform 0.18s;
+}
+
+.shortcut-item:hover .shortcut-box {
+  background: #fff0ee;
+  transform: translateY(-3px);
+}
+
+.shortcut-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  text-align: center;
+  word-break: keep-all;
+}
