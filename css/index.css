@@ -310,42 +310,6 @@
   padding: 0 24px;
 }
 
-/* 우측 고정 광고 패널: 1200px 콘텐츠 영역 바깥 오른쪽 여백에 배치 */
-.side-ad-panel {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  left: calc(50% + 616px); /* 콘텐츠 절반(600px) + 여백(16px) */
-  width: 160px;
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.side-ad-panel.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* 뷰포트가 좁아서 콘텐츠 영역을 침범할 경우 숨김 */
-@media (max-width: 1420px) {
-  .side-ad-panel {
-    display: none;
-  }
-}
-
-.ad-box {
-  background: #cccccc;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
 .section-header {
   display: flex;
   align-items: flex-end;

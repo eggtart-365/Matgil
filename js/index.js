@@ -47,22 +47,6 @@ track.addEventListener('touchend', e => {
 
 startAuto(); // 페이지 로드 시 자동 슬라이드 시작
 
-
-
-// 캐러슬 배너가 화면에서 사라지면 광고 패널 표시
-const adPanel = document.querySelector('.side-ad-panel');
-const carouselSection = document.querySelector('.carousel-section');
-
-const adObserver = new IntersectionObserver(
-  ([entry]) => {
-    // 캐러슬이 뷰포트에서 완전히 벗어나면 광고 표시, 다시 보이면 숨김
-    adPanel.classList.toggle('visible', !entry.isIntersecting);
-  },
-  { threshold: 0 }
-);
-
-adObserver.observe(carouselSection);
-
 // 카테고리 필터 관련 변수 선언
 const filterTabs = document.querySelectorAll('.filter-tab');
 const filterCards = document.querySelectorAll('.filter-card');
