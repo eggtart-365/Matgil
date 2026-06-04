@@ -39,8 +39,6 @@ body {
   /* Flex 레이아웃 적용 */
   flex-direction: column;
   /* 자식 요소들을 세로 방향으로 배치 */
-  margin-bottom: 12px;
-  /* 바깥으로 하단 여백 12px */
 }
 
 .input-label {
