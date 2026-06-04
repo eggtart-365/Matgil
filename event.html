@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 - 맛길</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/event.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="index.html" class="logo">
+            <img
+              src="assets/img/Logo.svg"
+              alt=""
+              class="logo-icon"
+              width="28"
+              height="28"
+            />
+            맛길
+          </a>
+          <nav class="nav">
+            <a href="index.html">홈</a>
+            <a href="event.html" class="is-current">이벤트</a>
+            <a href="about.html">소개</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-bar">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="검색어를 입력해주세요"
+            />
+            <button class="search-button" type="button">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+          <a href="login.html" class="btn-login">로그인</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="event-hero">
+        <div class="event-hero-bg">
+          <div class="event-hero-shape shape-1"></div>
+          <div class="event-hero-shape shape-2"></div>
+        </div>
+        <div class="event-hero-inner">
+          <div class="event-hero-text">
+            <p class="event-hero-eyebrow">EVENT</p>
+            <h1 class="event-hero-title">
+              <span class="event-hero-brand">맛길</span> 이벤트
+            </h1>
+            <p class="event-hero-desc">
+              리뷰 작성, 맛집 탐색만 해도 쌓이는 포인트와<br />
+              우리 동네 맛집을 위한 다양한 혜택을 만나보세요.
+            </p>
+          </div>
+          <div class="event-hero-visual">
+            <div class="event-highlight-card">
+              <span class="event-highlight-tag">🔥 인기 이벤트</span>
+              <span class="event-highlight-value">+5,000P</span>
+              <span class="event-highlight-desc">첫 리뷰 작성 시 최대 적립</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="event-list-section">
+        <div class="event-list-inner">
+          <div class="event-list-header">
+            <p class="event-list-eyebrow">진행 중인 혜택</p>
+            <h2 class="event-list-title">이벤트 모아보기</h2>
+          </div>
+
+          <div class="event-filters" id="eventFilters">
+            <button class="event-filter active" type="button" data-filter="all">
+              전체
+            </button>
+            <button class="event-filter" type="button" data-filter="ongoing">
+              진행 중
+            </button>
+            <button class="event-filter" type="button" data-filter="ended">
+              종료
+            </button>
+          </div>
+
+          <div class="event-grid" id="eventGrid">
+            <article class="event-card" data-status="ongoing">
+              <div class="event-card-thumb thumb-review">
+                <span class="event-card-badge badge-ongoing">진행 중</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">첫 리뷰 작성 포인트</h3>
+                <p class="event-card-desc">
+                  방문한 맛집의 첫 리뷰를 남기면 최대 5,000포인트를
+                  적립해드려요.
+                </p>
+                <p class="event-card-period">2026.03.01 ~ 2026.06.30</p>
+                <a href="login.html" class="event-card-btn">참여하기</a>
+              </div>
+            </article>
+
+            <article class="event-card" data-status="ongoing">
+              <div class="event-card-thumb thumb-welcome">
+                <span class="event-card-badge badge-ongoing">진행 중</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">신규 가입 웰컴 쿠폰</h3>
+                <p class="event-card-desc">
+                  회원가입 후 7일 이내 첫 방문 인증 시 맛집 할인 쿠폰을
+                  드립니다.
+                </p>
+                <p class="event-card-period">2026.01.01 ~ 2026.12.31</p>
+                <a href="sigunup.html" class="event-card-btn">가입하기</a>
+              </div>
+            </article>
+
+            <article class="event-card" data-status="ongoing">
+              <div class="event-card-thumb thumb-vote">
+                <span class="event-card-badge badge-ongoing">진행 중</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">우리 동네 맛집 투표</h3>
+                <p class="event-card-desc">
+                  이달의 베스트 맛집에 투표하고 추첨을 통해 기프티콘을
+                  받아보세요.
+                </p>
+                <p class="event-card-period">2026.04.01 ~ 2026.04.30</p>
+                <a href="index.html" class="event-card-btn">투표하기</a>
+              </div>
+            </article>
+
+            <article class="event-card" data-status="ended">
+              <div class="event-card-thumb thumb-summer">
+                <span class="event-card-badge badge-ended">종료</span>
+              </div>
+              <div class="event-card-body">
+                <h3 class="event-card-title">여름 시즌 맛집 챌린지</h3>
+                <p class="event-card-desc">
+                  5곳 이상 방문 인증 시 한정 배지와 추가 포인트를 지급했던
+                  시즌 이벤트입니다.
+                </p>
+                <p class="event-card-period">2025.07.01 ~ 2025.08.31</p>
+                <span class="event-card-btn event-card-btn-disabled"
+                  >종료됨</span
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <a href="index.html" class="footer-logo">맛길</a>
+          <nav class="footer-nav">
+            <a href="about.html" class="footer-nav-link">소개</a>
+            <a href="event.html" class="footer-nav-link">이벤트</a>
+            <a
+              href="https://github.com/eggtart-365"
+              class="footer-nav-link"
+              target="_blank"
+              >GitHub</a
+            >
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-desc"
+            >컴퓨터소프트웨어공학과 26학번 김태현 웹프로그래밍 과제</span
+          >
+          <span class="footer-copy">&copy; 2026 맛길. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/event.js"></script>
+  </body>
+</html>

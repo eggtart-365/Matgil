@@ -113,6 +113,11 @@ body {
   /* 호버 시 텍스트 컬러를 맛길 브랜드 컬러로 변경 */
 }
 
+.nav a.is-current {
+  color: #e85d4a;
+  font-weight: 600;
+}
+
 .btn-login {
   font-size: 0.9rem;
   /* 폰트 사이즈 0.9rem */
