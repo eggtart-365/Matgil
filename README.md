@@ -1,11 +1,13 @@
-<p align="center">
-  <img src="assets/img/TypoLogo.png" alt="맛길" width="240" />
-</p>
+<div align="center">
+
+<img src="assets/img/TypoLogo.png" alt="맛길" width="240" />
 
 # 맛길 (Matgil)
 
 우리 동네 맛집을 탐색하고, 리뷰와 카테고리로 골라볼 수 있는 맛집 정보 사이트입니다.  
 웹프로그래밍 과제용으로 제작한 정적 HTML/CSS/JS 프로젝트입니다.
+
+</div>
 
 ## 페이지 구성
 
