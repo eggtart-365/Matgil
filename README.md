@@ -60,4 +60,4 @@ Matgil/
 | 날짜 | 내용 |
 |------|------|
 | 2026-05-29 | 로그인·회원가입 validation, 하단 error 텍스트 및 레이아웃 조정 |
-| 2026-06-04 | 이벤트 페이지, 로고(SVG·YClover), favicon, 네비 `is-current`, README 정리 |
+| 2026-06-04 | 이벤트 페이지, 로고(SVG·YClover), favicon, 네비 `is-current`, SEO·OG·sitemap |
