@@ -46,7 +46,7 @@ body {
   /* 자식 요소들을 가로 방향으로 중앙 정렬 */
   justify-content: space-between;
   /* 자식 요소들을 양 끝으로 균등 배치 */
-  max-width: 1200px;
+  max-width: 1240px;
   /* 최대 너비 1200px */
   margin: 0 auto;
   /* 바깥으로 상하 여백 0, 좌우 auto (가운데 정렬) */
