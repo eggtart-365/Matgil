@@ -276,6 +276,7 @@ body {
   /* 로고 컬러: 맛길 브랜드 컬러 */
   text-decoration: none;
   /* 텍스트 밑줄 등 장식 제거 */
+  font-family: "YClover", sans-serif;
 }
 
 .footer-nav {
