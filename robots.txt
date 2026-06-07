@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /login.html
-Disallow: /sigunup.html
-
-Sitemap: https://eggtart-365.github.io/Matgil/sitemap.xml
